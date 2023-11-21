@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+@font-face {
+    font-family: 'aktivLight';
+    src: url('../fonts/AktivGroteskCorp-Light.ttf');
+}
+@font-face {
+    font-family: "";
+    src: url("../fonts/AktivGroteskCorp-Medium.ttf");
+}
