@@ -46,7 +46,7 @@ const questionGenerator = () => {
         let userInput = document.getElementById('inputValue').value
         if (userInput) {
                 if(userInput == answerValue){
-                    stop('<span>Correcy Answer</span>')
+                    stop('<span>Correcy Answer🎉</span>')
                 }else if(operatorQuestion && !operators.includes(userInput)){
                     messageError.classList.remove('hide');
                     messageError.innerHTML = 'please enter valid operator'
