@@ -109,6 +109,50 @@ body {
   color: #d62f2f;
   padding: 0.2em 0;
 }
+.controls-container{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(
+    to left bottom,
+    #322f30,
+    #2d2b2c,
+    #292628,
+    #242225,
+    #1f1e21,
+    #1e1e21,
+    #1c1e21,
+    #1b1e21,
+    #1e2224,
+    #212628,
+    #242a2b,
+    #282e2e
+  );
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+#start-btn{
+  font-size: 1.2em;
+  font-weight: 500;
+  background-color: #fff;
+  color: #23234c;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: .8em 1.8em;
+  border-radius: .3em;
+}
+#result{
+  margin-bottom: 1em;
+  font-size: 1.3em;
+  color: #23234c;
+}
+#result span{
+  font-weight: 600;
+}
 .hide {
   display: none;
 }

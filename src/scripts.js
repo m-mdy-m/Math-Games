@@ -65,12 +65,14 @@ startBtn.addEventListener('click',()=>{
     answerValue=""
     messageError.innerHTML = ""
     messageError.classList.add('hide')
+    controls.classList.add('hide')
+    startBtn.classList.add('hide')
     questionGenerator()
 })
 //  stop
 const stop = (resultText)=>{
     result.innerHTML = resultText
-    startBtn.innerText = "Restart"
+    startBtn.innerHTML = "Restart"
     controls.classList.remove('hide')
-    startBtn.classList.add('hide')
+    startBtn.classList.remove('hide')
 }
