@@ -34,13 +34,43 @@ const questionGenerator = () => {
     }else if(randomVar == 3){
         answerValue = randomOperator;
         operatorQuestion = true
-        question.innerHTML = `${num1}<input type="number" id="inputValue" placeholder="?"\>${num2}= ${solution}`
+        question.innerHTML = `${num1}<input type="text" id="inputValue" placeholder="?"\>${num2}= ${solution}`
     }else{
         answerValue = solution
         question.innerHTML = `${num1}${randomOperator}${num2}=<input type="number" id="inputValue" placeholder="?"\>`
+    }   
+    // Check input
+    submitBtn.addEventListener('click',(e)=>{
+        e.preventDefault()
+        messageError.classList.add('hide')
+        let userInput = document.getElementById('inputValue').value
+        if (userInput) {
+                if(userInput == answerValue){
+                    stop('<span>Correcy Answer</span>')
+                }else if(operatorQuestion && !operators.includes(userInput)){
+                    messageError.classList.remove('hide');
+                    messageError.innerHTML = 'please enter valid operator'
+                }else{
+                    stop('Opps!!<span>Wrong</span>Answer')
+                }
+        }else{
+            messageError.classList.remove('hide');
+            messageError.innerHTML="input Cannot Be Empty"
     }
-
+    })
 };
+//  start 
 startBtn.addEventListener('click',()=>{
+    operatorQuestion=false
+    answerValue=""
+    messageError.innerHTML = ""
+    messageError.classList.add('hide')
     questionGenerator()
 })
+//  stop
+const stop = (resultText)=>{
+    result.innerHTML = resultText
+    startBtn.innerText = "Restart"
+    controls.classList.remove('hide')
+    startBtn.classList.add('hide')
+}
